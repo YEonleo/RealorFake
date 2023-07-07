@@ -8,6 +8,9 @@ ${PROJECT}
 ├── config/
 │   ├── train_config.yaml
 │   └── predict_config.yaml
+├── ensemble/
+│   ├── ensemble.py
+│   └── ensemble_config.yaml
 ├── models/
 │   ├── CLIPModel.py
 │   ├── TFModel.py
@@ -29,6 +32,9 @@ ${PROJECT}
 ```
 
 - config: 학습/추론에 필요한 하이퍼파라미터 등을 기록하는 yaml 파일
+- ensemble
+    - ensemble.py: 앙상블 클래스
+    - ensemble_config.yaml: 앙상블의 선택할 csv파일을 기록하는 yaml 파일
 - models
     - CLIPModel.py: CLIP 기반 모델 클래스
     - TFModel.py: Transformer 기반 모델 클래스
