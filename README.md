@@ -9,6 +9,9 @@ ${PROJECT}
 │   ├── train_config.yaml
 │   └── predict_config.yaml
 ├── models/
+│   ├── CLIPModel.py
+│   ├── TFModel.py
+│   ├── effnet_google.py
 │   ├── effnet.py
 │   └── utils.py
 ├── modules/
@@ -27,6 +30,9 @@ ${PROJECT}
 
 - config: 학습/추론에 필요한 하이퍼파라미터 등을 기록하는 yaml 파일
 - models
+    - CLIPModel.py: CLIP 기반 모델 클래스
+    - TFModel.py: Transformer 기반 모델 클래스
+    - effnet_google.py: Timm을 사용하지 않고 Google기반의의 Efficinetnet 모델 클래스
     - effnet.py: Efficinetnet 모델 클래스
     - utils.py: config에서 지정한 모델 클래스를 불러와 리턴하는 파일
 - modules
@@ -87,4 +93,17 @@ ${DATA}
     3. TRAIN/train_serial: 학습된 모델 가중치 및 하이퍼파라미터를 불러올 train serial number (result/train 내 폴더명) 지정
 2. 'python predict.py' 실행
 3. 'results/predict/' 내에 결과 파일(predictions.csv)이 저장됨
+
+### 학습 진행 방법 
+
+모델의 최종 출력단 last hidden state에서 CLS를 출력하여 sigmoid를 하는 방식 (BCEWITHLOGITSLOSS를 사용)으로 학습을 진행
+
+### 추가 데이터셋 
+
+Hugging Face 의 AiorNot
+
+https://huggingface.co/spaces/competitions/aiornot 
+
+### 앙상블
+Hard Voting기반 앙상블 사용용
     
