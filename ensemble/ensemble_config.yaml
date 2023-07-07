@@ -1,0 +1,39 @@
+DIRECTORY:
+  # dataset: ../data/test/images
+  sample_submission_path : ../data/test/sample_submission.csv
+
+NAME: ensemble_test
+
+VOTERS:
+  # swin_0628_1618:
+  #   csv_file: swin_0628_1618.csv
+  #   macrof1: 0.858
+
+  ummaug0630_1838:
+    csv_file: ummaug0630_1838.csv
+    macrof1: 0.8841
+
+  swin_0701_1808:
+    csv_file: swin_0701_1808.csv
+    macrof1: 0.882
+  
+  swin_0701_1616:
+    csv_file: swin_0701_1616.csv
+    macrof1: 0.869
+  
+  swin_0703_0148:
+    csv_file: swin_0703_0148.csv
+    macrof1: 0.9315
+  
+  # ensemble1:
+  #   csv_file: ensemble1.csv
+  #   macrof1: 0.8843
+  
+  # ensemble2:
+  #   csv_file: ensemble2.csv
+  #   macrof1: 0.9026
+
+
+VOTING_METHOD: weighted #soft, weighted
+
+IS_PROB: 0
