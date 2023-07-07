@@ -94,16 +94,22 @@ ${DATA}
 2. 'python predict.py' 실행
 3. 'results/predict/' 내에 결과 파일(predictions.csv)이 저장됨
 
+---
+
 ### 학습 진행 방법 
+
 
 모델의 최종 출력단 last hidden state에서 CLS를 출력하여 sigmoid를 하는 방식 (BCEWITHLOGITSLOSS를 사용)으로 학습을 진행
 
 ### 추가 데이터셋 
+
 
 Hugging Face 의 AiorNot
 
 https://huggingface.co/spaces/competitions/aiornot 
 
 ### 앙상블
+
+
 Hard Voting기반 앙상블 사용용
     
