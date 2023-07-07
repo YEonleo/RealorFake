@@ -1,0 +1,70 @@
+DIRECTORY:
+  dataset: ../data/train
+TRAINER:
+  model: transformers
+  optimizer: adamw
+  learning_rate: 0.95e-05
+  loss: bce
+  metric:
+  - accuracy
+  - f1macro
+  n_epochs: 7
+  early_stopping_target: val_accuracy
+  early_stopping_patience: 10
+  early_stopping_mode: max
+  amp: false
+  gpu: 0
+  seed: 1001
+MODEL:
+  effnet:
+    backbone: efficientnet_b4
+    n_out: 1
+    is_sigmoid: true
+  effnet_google:
+    backbone: google/efficientnet-b7
+    n_out: 1
+    is_sigmoid: true
+  transformers:
+    backbone: umm-maybe/AI-image-detector
+    n_out: 1
+    is_sigmoid: true
+  AIorNot:
+    backbone: Nahrawy/AIorNot
+    n_out: 1
+    is_sigmoid: true
+  AIorNot2:
+    backbone: emanehab/aiornot_eman
+    n_out: 1
+    is_sigmoid: true
+  GVit:
+    backbone: google/vit-base-patch16-224-in21k
+    n_out: 1
+    is_sigmoid: true
+  GVit_L:
+    backbone: google/vit-large-patch16-224-in21k
+    n_out: 1
+    is_sigmoid: true
+  CLIP_Vit:
+    backbone: laion/CLIP-ViT-g-14-laion2B-s12B-b42K
+    n_out: 1
+    is_sigmoid: true
+DATASET:
+  val_size: 0.05
+  aug_datasets:
+  - aiornot
+  augmentation: 'HT_hard'
+DATALOADER:
+  batch_size: 16
+  num_workers: 1
+  shuffle: true
+  pin_memory: true
+  drop_last: true
+LOGGER:
+  debug: false
+  wandb: true
+  logging_interval: 100
+  plot:
+  - loss
+  - accuracy
+  - f1macro
+  - elapsed_time

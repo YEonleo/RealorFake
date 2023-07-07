@@ -1,0 +1,9 @@
+program: ../train.py
+method: bayes #random
+metric:
+  name: validation_loss
+  goal: minimize
+parameters:
+  learning_rate:
+    min: 1.0e-5
+    max: 9.0e-5

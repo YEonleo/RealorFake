@@ -1,0 +1,13 @@
+DIRECTORY:
+  dataset: ../data/test/images
+  sample_submission_path : ../data/test/sample_submission.csv
+
+TRAIN:
+  train_serials: ['20230628_1618','20230628_0233','20230629_0344','20230629_1444']
+  batch_size: 1
+
+PREDICT:
+  seed: 42
+  gpu: 0
+
+VOTING_METHOD: soft #soft, hard, weighted

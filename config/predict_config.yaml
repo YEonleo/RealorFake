@@ -1,0 +1,11 @@
+DIRECTORY:
+  dataset: ../data/test/images
+  sample_submission_path : ../data/test/sample_submission.csv
+
+TRAIN:
+  train_serial: '20230703_1742'
+  batch_size: 16
+
+PREDICT:
+  seed: 42
+  gpu: 0
